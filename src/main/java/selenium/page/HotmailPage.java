@@ -1,32 +1,32 @@
 package selenium.page;
 
-import selenium.core.BasePage;
+import static selenium.core.DriverFactory.getDriver;
 
-public class HotmailPage extends BasePage {
+import org.openqa.selenium.By;
+
+public class HotmailPage {
 
 	public void escreverEmail(String email) {
-		dsl.escrever("//input[@name='loginfmt']", email);
+		getDriver().findElement(By.xpath("//input[@name='loginfmt']")).clear();  // limpa o campo, caso tenha algo escrito nele
+		getDriver().findElement(By.xpath("//input[@name='loginfmt']")).sendKeys(email);
 	}
 	
 	public void escreverSenha(String senha) {
-		dsl.escrever("//input[@name='passwd']", senha);
+		getDriver().findElement(By.xpath("//input[@name='passwd']")).sendKeys(senha);
 	}
 	
 	public void clicarBotaoProximo() {
-		dsl.clicarBotao("//input[@type='submit']");
+		getDriver().findElement(By.xpath("//input[@type='submit']")).click();
 	}
 
 	public String obterMensagemErroEmail() {
-		return dsl.obterMensagemErro("//div[@class='col-md-24 error ext-error']");
+		return getDriver().findElement(By.xpath("//div[@class='col-md-24 error ext-error']")).getText();
 	}
 	
 	public String obterMensagemErroSenha() {
-		return dsl.obterMensagemErro("//div[@id='passwordError'");
+		return getDriver().findElement(By.xpath("//div[@id='passwordError']")).getText();
 	}
-
-
-
-
 	
-
 }
+
+

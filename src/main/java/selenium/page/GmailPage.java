@@ -1,30 +1,32 @@
 package selenium.page;
 
-import selenium.core.BasePage;
+import static selenium.core.DriverFactory.getDriver;
 
-public class GmailPage extends BasePage {
+import org.openqa.selenium.By;
+
+public class GmailPage {
 
 	public void escreverEmail(String email) {
-		dsl.escrever("//input[@name='identifier']", email);
+		getDriver().findElement(By.xpath("//input[@name='identifier']")).clear();  // limpa o campo, caso tenha algo escrito nele
+		getDriver().findElement(By.xpath("//input[@name='identifier']")).sendKeys(email);
 	}
 	
 	public void escreverSenha(String senha) {
-		dsl.escrever("//input[@name='password']", senha);
+		getDriver().findElement(By.xpath("//input[@name='password']")).sendKeys(senha);
 	}
 
 	public void clicarBotaoProximo() {
-		dsl.clicarBotao("//span[.='Próxima']");
+		getDriver().findElement(By.xpath("//span[.='Próxima']")).click();
 	}
 
 	public String obterMensagemErroEmail() {
-		return dsl.obterMensagemErro("//div[@class='o6cuMc']");
+		return getDriver().findElement(By.xpath("//div[@class='o6cuMc']")).getText();
 	}
 
 	public String obterMensagemErroSenha() {
-		return dsl.obterMensagemErro("//div[@jsname='B34EJ']/span");
+		return getDriver().findElement(By.xpath("//div[@jsname='B34EJ']/span")).getText();
 	}
 
-	
-	
-
 }
+
+

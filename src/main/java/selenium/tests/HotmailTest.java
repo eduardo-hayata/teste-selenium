@@ -58,6 +58,5 @@ public class HotmailTest extends BaseTest {
 		Assert.assertEquals("Você tentou entrar várias vezes com uma conta ou uma senha incorreta.", page.obterMensagemErroSenha());
 	}
 	
-	
 
 }

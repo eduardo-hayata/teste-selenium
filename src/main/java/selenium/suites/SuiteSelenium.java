@@ -11,6 +11,7 @@ import selenium.tests.GoogleTest;
 @SuiteClasses({
 	GoogleTest.class,
 	GmailTest.class
+	//HotmailTest.class
 })
 public class SuiteSelenium {
 

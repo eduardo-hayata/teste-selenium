@@ -1,24 +1,26 @@
 package selenium.page;
-import selenium.core.BasePage;
+import static selenium.core.DriverFactory.getDriver;
 
-public class GooglePage extends BasePage {
+import org.openqa.selenium.By;
+
+public class GooglePage {
 	
 	public void pesquisar(String texto) {
-		dsl.escrever("//input[@title='Pesquisar']", texto);
+		getDriver().findElement(By.xpath("//input[@title='Pesquisar']")).clear();  // limpa o campo, caso tenha algo escrito nele
+		getDriver().findElement(By.xpath("//input[@title='Pesquisar']")).sendKeys(texto);
 	}
 
 	public void clicarForaCaixa() {
-		dsl.clicarForaCaixa("//div[@class='gb_pa gb_Zd gb_Va gb_Hc']");
+		getDriver().findElement(By.xpath("//div[@class='gb_pa gb_Zd gb_Va gb_Hc']")).click();
 	}
 	
 	public void clicarBotao(String botao) {
-		dsl.clicarBotao("//div[@class='FPdoLc lJ9FBc']//input[@value='"+botao+"']");
+		getDriver().findElement(By.xpath("//div[@class='FPdoLc lJ9FBc']//input[@value='"+botao+"']")).click();
 	}
 	
 	public String obterTextoCampoPesquisa() {
-		return dsl.obterTexto("//div[@jsname='aJyGR']/..//input");
+		return getDriver().findElement(By.xpath("//div[@jsname='aJyGR']/..//input")).getAttribute("value");
 	}
-
 
 
 }
