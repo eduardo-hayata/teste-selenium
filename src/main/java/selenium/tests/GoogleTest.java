@@ -17,6 +17,8 @@ public class GoogleTest extends BaseTest {
 		DriverFactory.getDriver().get("http://www.google.com");
 	}
 	
+	//-----------------------------------------------------------------------------------------------------------------------------
+	
 	@Test
 	public void acessarGoogle() {
 		Assert.assertEquals("Google", DriverFactory.getDriver().getTitle());

@@ -21,6 +21,8 @@ public class HotmailTest extends BaseTest {
 		DriverFactory.getDriver().get("https://login.live.com/");
 	}
 	
+	//-----------------------------------------------------------------------------------------------------------------------------
+	
 	@Test
 	@Ignore // OBS: Ainda nao consegui resolver o teste
 	public void loginComEmailFaltando() {

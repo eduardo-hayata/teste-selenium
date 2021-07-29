@@ -15,8 +15,10 @@ public class GmailTest extends BaseTest {
 	
 	@Before
 	public void inicializa() {
-		DriverFactory.getDriver().get("https://accounts.google.com/signin/v2/identifier?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&hl=pt-BR&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
+		DriverFactory.getDriver().get("https://accounts.google.com/");
 	}
+	
+	//-----------------------------------------------------------------------------------------------------------------------------
 	
 	@Test
 	public void loginComEmailFaltando() {
