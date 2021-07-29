@@ -21,7 +21,6 @@ public class GmailTest extends BaseTest {
 	@Test
 	public void loginComEmailFaltando() {
 		page.clicarBotaoProximo();
-		
 		Assert.assertEquals("Digite um e-mail ou número de telefone", page.obterMensagemErroEmail());
 	}
 	

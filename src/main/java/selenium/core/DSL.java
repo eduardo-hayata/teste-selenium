@@ -42,7 +42,6 @@ public class DSL {
 		 return obterTexto(By.xpath(xpath));
 	}
 
-	
 	public String obterMsgErro(By by) {
 		return getDriver().findElement(by).getText();
 	}
