@@ -25,7 +25,7 @@ public class GmailTest extends BaseTest {
 	}
 	
 	@Test
-	@Ignore
+	@Ignore // OBS: Ainda nao consegui resolver o teste
 	public void loginComSenhaFaltando() {
 		page.escreverEmail("teste@email.com");
 		page.clicarBotaoProximo();
@@ -33,12 +33,12 @@ public class GmailTest extends BaseTest {
 		
 		Assert.assertEquals("Digite uma senha", page.obterMensagemErroSenha());
 		
-		// OBS: Não foi possivel fazer o teste. Aparece a seguinte mensagem:
+		// OBS: Aparece a seguinte mensagem:
 		// "Não foi possivel fazer o login. Este navegador ou app pode não ser seguro..."
 	}
 	
 	@Test
-	@Ignore
+	@Ignore // OBS: Ainda nao consegui resolver o teste
 	public void loginComDadosInvalidos() {
 		page.escreverEmail("teste@email.com");
 		page.clicarBotaoProximo();
@@ -48,7 +48,7 @@ public class GmailTest extends BaseTest {
 		
 		Assert.assertEquals("Senha incorreta. Tente novamente ou clique em \"Esqueceu a senha?\" para redefini-la.", page.obterMensagemErroSenha());
 		
-		// OBS: Não foi possivel fazer o teste. Aparece a seguinte mensagem:
+		// OBS: Aparece a seguinte mensagem:
 		// "Não foi possivel fazer o login. Este navegador ou app pode não ser seguro..."
 	}
 }
