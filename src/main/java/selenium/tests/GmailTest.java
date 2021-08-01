@@ -34,9 +34,6 @@ public class GmailTest extends BaseTest {
 		page.clicarBotaoProximo();
 		
 		Assert.assertEquals("Digite uma senha", page.obterMensagemErroSenha());
-		
-		// OBS: Aparece a seguinte mensagem:
-		// "Não foi possivel fazer o login. Este navegador ou app pode não ser seguro..."
 	}
 	
 	@Test
@@ -49,9 +46,6 @@ public class GmailTest extends BaseTest {
 		page.clicarBotaoProximo();
 		
 		Assert.assertEquals("Senha incorreta. Tente novamente ou clique em \"Esqueceu a senha?\" para redefini-la.", page.obterMensagemErroSenha());
-		
-		// OBS: Aparece a seguinte mensagem:
-		// "Não foi possivel fazer o login. Este navegador ou app pode não ser seguro..."
 	}
 }
 
