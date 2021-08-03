@@ -37,7 +37,6 @@ public class NetshoesPage {
 
 	public void clicarBotao(String botao) {
 		getDriver().findElement(By.xpath("//button[.=\""+botao+"\"]")).click();
-		
 	}
 
 	public String obterMensagemErroEmail() {
