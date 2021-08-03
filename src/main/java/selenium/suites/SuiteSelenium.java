@@ -7,6 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 import selenium.tests.GloboEsporteTest;
 import selenium.tests.GmailTest;
 import selenium.tests.GoogleTest;
+import selenium.tests.MagaluTest;
 import selenium.tests.NetshoesTest;
 
 @RunWith(Suite.class)
@@ -15,7 +16,8 @@ import selenium.tests.NetshoesTest;
 	GmailTest.class,
 	//HotmailTest.class
 	NetshoesTest.class,
-	GloboEsporteTest.class
+	GloboEsporteTest.class,
+	MagaluTest.class
 })
 public class SuiteSelenium {
 
