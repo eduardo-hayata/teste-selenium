@@ -20,7 +20,8 @@ public class HotmailPage {
 	}
 
 	public String obterMensagemErroEmail() {
-		return getDriver().findElement(By.xpath("//div[@class='col-md-24 error ext-error']")).getText();
+		//return getDriver().findElement(By.xpath("//div[@class='col-md-24 error ext-error']")).getText();
+		return getDriver().findElement(By.xpath("//div[@id='usernameError']")).getText();
 	}
 	
 	public String obterMensagemErroSenha() {

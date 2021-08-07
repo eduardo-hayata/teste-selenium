@@ -24,7 +24,7 @@ public class HotmailTest extends BaseTest {
 	//-----------------------------------------------------------------------------------------------------------------------------
 	
 	@Test
-	@Ignore // OBS: Ainda nao consegui resolver o teste
+	//@Ignore // OBS: Ainda nao consegui resolver o teste
 	public void loginComEmailFaltando() {
 		page.clicarBotaoProximo();
 		

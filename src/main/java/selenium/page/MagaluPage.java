@@ -20,8 +20,12 @@ public class MagaluPage {
 		clicar(By.xpath("(//a[.='"+texto+"'])[1]"));
 	}
 
-	public String obterTituloDaPagina() {
-		return obterTexto(By.xpath("//h1[@itemprop='description']"));
+	public void clicarBotaoContinuarConta() {
+		clicar(By.xpath("//span[@class='mobile-hidden']"));
+	}
+	
+	public void clicarBotaoContinuarLogin() {
+		clicar(By.xpath("//button[.='Continuar']"));
 	}
 
 	public void selecionar(String texto) {
@@ -41,16 +45,16 @@ public class MagaluPage {
 		clicar(By.xpath("//span[@id='btnHeaderSearch']/i"));
 	}
 
-	public void clicarBotaoContinuarConta() {
-		clicar(By.xpath("//span[@class='mobile-hidden']"));
+	public String obterTexto(By by) {
+		return getDriver().findElement(by).getText();
 	}
-
+	
+	public String obterTituloDaPagina() {
+		return obterTexto(By.xpath("//h1[@itemprop='description']"));
+	}
+	
 	public String obterMsgErroConta() {
 		return obterTexto(By.xpath("//p[@class='FormGroup-errorMessage']"));
-	}
-
-	public void clicarBotaoContinuarLogin() {
-		clicar(By.xpath("//button[.='Continuar']"));
 	}
 
 	public String obterMsgErroEmail() {
@@ -61,9 +65,6 @@ public class MagaluPage {
 		return obterTexto(By.xpath("//p[.='Insira a senha.']"));
 	}
 	
-	public String obterTexto(By by) {
-		return getDriver().findElement(by).getText();
-	}
 	
 
 }
