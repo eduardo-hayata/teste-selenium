@@ -3,6 +3,7 @@ package selenium.page;
 import static selenium.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -19,6 +20,10 @@ public class MagaluPage {
 	public void clicarPorTexto(String texto) {
 		clicar(By.xpath("(//a[.='"+texto+"'])[1]"));
 	}
+	
+	public void clicarPorTitulo(String titulo) {
+		clicar(By.xpath("//h3[@title='"+titulo+"']"));
+	}
 
 	public void clicarBotaoContinuarConta() {
 		clicar(By.xpath("//span[@class='mobile-hidden']"));
@@ -26,6 +31,18 @@ public class MagaluPage {
 	
 	public void clicarBotaoContinuarLogin() {
 		clicar(By.xpath("//button[.='Continuar']"));
+	}
+	
+	public void addProdutoNaSacola() {
+		clicar(By.xpath("(//span[@class='button__text'])[1]"));
+	}
+	
+	public void selecionarSemGarantia() {
+		clicar(By.id("no-warranty"));
+	}
+	
+	public void excluirProdutoSacola() {
+		clicar(By.className("BasketItem-delete-label"));
 	}
 
 	public void selecionar(String texto) {
@@ -64,7 +81,27 @@ public class MagaluPage {
 	public String obterMsgErroSenha() {
 		return obterTexto(By.xpath("//p[.='Insira a senha.']"));
 	}
+
+	public String obterMensagemSacolaVazia() {
+		//return obterTexto(By.className("EmptyBasket-title"));
+		//return obterTexto(By.xpath("//*[@class='EmptyBasket-title']"));
+		return obterTexto(By.xpath("//*[contains(text(),'vazia')]"));
+		
+		// TBD: Ainda não consegui pegar a MSG correta
+	}
 	
+	public void rolarTela(int pos_x, int pos_y) {
+		((JavascriptExecutor) getDriver()).executeScript("window.scrollBy("+pos_x+", "+pos_y+")");  // Scroll 
+		
+		//window.scrollBy(X, Y);
+		//Coordenadas positivas deslocarão para a direita e para baixo
+		//Coordenadas negativas deslocarão para a esquerda e para cima
+	}
+	
+	public void rolarTelaPraBaixo() {
+		rolarTela(0, 500);
+	}
+
 	
 
 }
